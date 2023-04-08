@@ -1,5 +1,7 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Statistics } from './Statistics';
+import { Notification } from './Notification';
 
 class MyClicker extends Component {
   state = {
@@ -51,21 +53,18 @@ class MyClicker extends Component {
             </button>
           </li>
         </ul>
-        <div style={{ display: good || neutral || bad ? 'block' : 'none' }}>
-          <div className="title">Statistics:</div>
-          <ul className="flexator">
-            <li>
-              <p>Good: {good}</p>
-            </li>
-            <li>
-              <p>Neutral: {neutral}</p>
-            </li>
-            <li>
-              <p>Bad: {bad}</p>
-            </li>
-          </ul>
-          <p className="pfb">Positive feedback: {pfb}%</p>
-        </div>
+        <Notification
+          message={'There is no feedback'}
+          good={this.state.good}
+          neutral={this.state.neutral}
+          bad={this.state.bad}
+        />
+        <Statistics
+          good={this.state.good}
+          neutral={this.state.neutral}
+          bad={this.state.bad}
+          total={pfb}
+        />
       </div>
     );
   }
