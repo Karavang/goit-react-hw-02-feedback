@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
-import MyClicker from './components/App';
+import Section from 'components/Section';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <div className="all-pos">
       <div className="title">Please, leave feedback</div>
-      <MyClicker />
+      <Section />
     </div>
   </React.StrictMode>
 );
