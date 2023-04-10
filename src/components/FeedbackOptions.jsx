@@ -2,12 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 export class FeedbackOptions extends Component {
-  state = {
-    good: this.props.good,
-    neutral: this.props.neutral,
-    bad: this.props.bad,
-  };
-
   render() {
     return (
       <ul className="flexator">

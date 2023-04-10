@@ -3,21 +3,14 @@ import PropTypes from 'prop-types';
 import { FeedbackOptions } from './FeedbackOptions';
 
 export default class Section extends Component {
-  state = {
-    good: this.props.good,
-    neutral: this.props.neutral,
-    bad: this.props.bad,
-  };
-
   render() {
-    console.log(this.state.good);
     return (
       <div>
         <div className="title">Please, leave feedback</div>
         <FeedbackOptions
-          good={this.state.good}
-          bad={this.state.bad}
-          neutral={this.state.neutral}
+          good={this.props.good}
+          bad={this.props.bad}
+          neutral={this.props.neutral}
           handleButtonClick={this.props.handleButtonClick}
         />
       </div>
