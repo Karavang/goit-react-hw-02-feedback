@@ -8,19 +8,13 @@ export class FeedbackOptions extends Component {
     bad: this.props.bad,
   };
 
-  handleButtonClick = type => {
-    this.setState(prevState => ({
-      [type]: prevState[type] + 1,
-    }));
-  };
-
   render() {
     return (
       <ul className="flexator">
         <li>
           <button
             className="clickable"
-            onClick={() => this.handleButtonClick('good')}
+            onClick={() => this.props.handleButtonClick('good')}
           >
             Good
           </button>
@@ -28,7 +22,7 @@ export class FeedbackOptions extends Component {
         <li>
           <button
             className="clickable"
-            onClick={() => this.handleButtonClick('neutral')}
+            onClick={() => this.props.handleButtonClick('neutral')}
           >
             Neutral
           </button>
@@ -36,7 +30,7 @@ export class FeedbackOptions extends Component {
         <li>
           <button
             className="clickable"
-            onClick={() => this.handleButtonClick('bad')}
+            onClick={() => this.props.handleButtonClick('bad')}
           >
             Bad
           </button>

@@ -1,6 +1,10 @@
 import PropTypes from 'prop-types';
 
-export function Statistics({ good, bad, neutral, total }) {
+export function Statistics({ good, bad, neutral }) {
+  const total =
+    good + neutral + bad > 0
+      ? ((good / (good + neutral + bad)) * 100).toFixed(2)
+      : 0;
   return (
     <div style={{ display: good || neutral || bad ? 'block' : 'none' }}>
       <div className="title">Statistics:</div>
